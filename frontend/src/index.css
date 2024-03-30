@@ -1,5 +1,6 @@
 body{
   background-color: #f0f0f0;
+  font-family: Kanit;
 }
 
 h2 {
@@ -19,6 +20,7 @@ h2 {
 header, .interview-form, .real-time, .post-interview {
   padding: 20px;
   border: 1px solid #000;
+  font-family: Kanit;
 }
 
 header {
@@ -30,15 +32,18 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: Kanit;
 }
 
 .interview-form h2, .real-time h2, .post-interview h2 {
   margin-bottom: 20px;
+  font-family: Kanit;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  font-family: Kanit;
 }
 
 input[type="text"], input[type="file"] {
@@ -55,6 +60,7 @@ label {
 .buttons {
   display: flex;
   justify-content: space-between;
+  font-family: Kanit;
 }
 
 button {
@@ -64,10 +70,18 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  
+}
+button:hover {
+  background-color: #0e852f;
 }
 
 button#end {
-  background-color: #047123;
+  background-color: #147c32;
+}
+
+button#end:hover {
+  background-color: #03611e;
 }
 
 .real-time, .post-interview {

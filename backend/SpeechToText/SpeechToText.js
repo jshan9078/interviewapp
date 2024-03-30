@@ -2,7 +2,7 @@ const speech = require('@google-cloud/speech');
 const record = require('node-record-lpcm16');
 const { Writable } = require('stream');
 
-process.env.GOOGLE_APPLICATION_CREDENTIALS = 'SpeechToText.json';
+process.env.GOOGLE_APPLICATION_CREDENTIALS = 'SpeechToText/speechtotext.json';
 
 const client = new speech.SpeechClient();
 

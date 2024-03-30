@@ -3,15 +3,15 @@ from google.cloud import speech_v1p1beta1 as speech
 import pyaudio
 from six.moves import queue
 
-# 配置Google Cloud认证
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "SpeechToText.json"
+# Configure Google Cloud authentication
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "speechtotext.json"
 
-# 音频录制的配置
+# Configuration for audio recording
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms
 
 class MicrophoneStream(object):
-    """用于从麦克风实时获取数据的类"""
+    """Class for real-time microphone data acquisition"""
 
     def __init__(self, rate, chunk):
         self._rate = rate
@@ -40,7 +40,7 @@ class MicrophoneStream(object):
         self._audio_interface.terminate()
 
     def _fill_buffer(self, in_data, frame_count, time_info, status_flags):
-        """每次回调都将音频数据放入缓冲区"""
+        """Put audio data into buffer every callback"""
         self._buff.put(in_data)
         return None, pyaudio.paContinue
 
@@ -63,7 +63,7 @@ class MicrophoneStream(object):
             yield b''.join(data)
 
 def listen_print_loop(responses):
-    """迭代响应并打印它们，包括说话人标签"""
+    """Iterate through responses and print them, including speaker labels"""
     for response in responses:
         if not response.results:
             continue

@@ -9,7 +9,7 @@ file = None  # 定义一个全局变量file
 def recognizestream():
     global isrecording
     global file  # 使用全局变量file
-    os.environ["GOOGLEAPPLICATION_CREDENTIALS"] = "speechtotext.json"
+    os.environ["GOOGLEAPPLICATION_CREDENTIALS"] = "InterviewHelper.json"
     client = speech.SpeechClient()
 
     p = pyaudio.PyAudio()

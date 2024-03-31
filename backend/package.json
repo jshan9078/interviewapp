@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "@google-cloud/speech": "^6.3.0",
+    "@google-cloud/vision": "^4.1.0",
     "fastapi": "^0.0.8",
     "node-record-lpcm16": "git+https://github.com/endoplasmic/node-record-lpcm16.git",
+    "node-webcam": "^0.8.2",
     "sox": "^0.1.0"
   }
 }

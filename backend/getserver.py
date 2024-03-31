@@ -10,6 +10,13 @@ from langchain_community.vectorstores import Chroma
 from langchain import hub
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
+from typing import List
+from langchain_core.pydantic_v1 import BaseModel, Field, validator
+from langchain.output_parsers import PydanticOutputParser
+
+class Feedback(BaseModel):
+    feedback_title: str = Field(description="performance rating")
+    elaboration: str = Field(description="explanation for rating")
 
 chat = ChatVertexAI(model_name="gemini-pro",convert_system_message_to_human=True,response_validation=False)
 
@@ -27,14 +34,6 @@ def create_app(test_config=None ):
     cors = CORS(app)
     app.config['CORS_HEADERS'] = 'Content-Type'
 
-    # Simple route
-    @app.route('/')
-    @cross_origin()
-    def hello_world(): 
-        return jsonify({
-           "status": "success",
-            "message": "Hello World!"
-        }) 
     
     @app.route('/retrieve')
     def retrieve():
@@ -50,8 +49,8 @@ def create_app(test_config=None ):
             r.delete(key)
 
         interviewdata = ' '.join(arr)
-        system = "You are a helpful assistant who gives interviews feedback on their performance"
-        human = f"Give feedback to this interviewer who had the following issues in their interview: {interviewdata}" 
+        system = "You are a helpful assistant who gives interviews feedback on their performance."
+        human = f"Give a performance rating and feedback to this interviewer who had the following issues in their interview (not the interviewee): {interviewdata}" 
         prompt = ChatPromptTemplate.from_messages([("system", system), ("human", human)])
         chain = prompt | chat
         res = chain.invoke({})

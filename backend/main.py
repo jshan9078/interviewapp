@@ -220,7 +220,7 @@ Result: "We went to the same college, right? It's great to see alumni applying. 
                 print(transcript)
             
             
-                human = f"Evaluate only the following text in the manner outlined above in at most 60 words: {transcript}"
+                human = f"Evaluate only the following text in the manner outlined above in at most 60 words. Only respond to the text I give you and nothing else. {transcript}"
                 
                 prompt = ChatPromptTemplate.from_messages([("system", system), ("human", human)])
                 chain = prompt | chat

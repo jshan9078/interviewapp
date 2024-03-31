@@ -4,7 +4,7 @@ import pyaudio
 from six.moves import queue
 
 # Configure Google Cloud authentication
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "speechtotext.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "InterviewHelper.json"
 
 # Configuration for audio recording
 RATE = 16000

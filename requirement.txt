@@ -1,3 +1,4 @@
-streamlit
 google-cloud-speech
+opencv-python
+google-cloud-vision
 pyaudio

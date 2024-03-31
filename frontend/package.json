@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google-cloud/speech": "^6.3.0",
+    "axios": "^1.6.8",
+    "node-record-lpcm16": "^1.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-pdftotext": "^1.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

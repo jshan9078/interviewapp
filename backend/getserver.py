@@ -24,7 +24,7 @@ chat = ChatVertexAI(model_name="gemini-pro",convert_system_message_to_human=True
 r = redis.Redis(
   host='redis-16096.c329.us-east4-1.gce.cloud.redislabs.com',
   port=16096,
-  password='nyoPc20qRBI9ZF3ZK2snRbEZzWiMLjxy')
+  password='')
 
 
 # Function that create the app 
